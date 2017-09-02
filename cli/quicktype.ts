@@ -153,7 +153,7 @@ class Run {
       })
     };
 
-    return Either.fromRight(Main.main(config));    
+    return Either.fromRight(Main.main({})(config));    
   }
 
   splitAndWriteJava = (dir: string, str: string) => {

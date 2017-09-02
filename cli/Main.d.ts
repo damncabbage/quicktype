@@ -9,7 +9,7 @@ type ErrorMessage = string;
 
 interface Main {
     renderers: Renderer[];
-    main(config: Config): Either<ErrorMessage, SourceCode>;
+    main(options: {[name: string]: string}): ((config: Config) => Either<ErrorMessage, SourceCode>);
     urlsFromJsonGrammar(json: object): Either<string, { [key: string]: string[] }>;
     intSentinel: string;
 }
