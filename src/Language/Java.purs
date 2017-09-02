@@ -42,6 +42,7 @@ renderer =
     , aceMode: "java"
     , extension: "java"
     , doc: javaDoc
+    , options: M.empty
     , transforms:
         { nameForClass: simpleNamer nameForClass
         , nextName: \s -> "Other" <> s
