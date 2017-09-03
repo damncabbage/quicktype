@@ -13,6 +13,7 @@ import Data.Foldable (for_, intercalate)
 import Data.List (List, (:))
 import Data.List as L
 import Data.Map as M
+import Data.StrMap as SM
 import Data.Map (Map)
 import Data.Maybe (Maybe(..))
 import Data.Set (Set)
@@ -27,7 +28,7 @@ renderer =
     , aceMode: "csharp"
     , extension: "cs"
     , doc: csharpDoc
-    , options: M.singleton "serializers"
+    , options: SM.singleton "serializers"
         { description: "Generate serializers?", default: BooleanValue true }
     , transforms:
         { nameForClass: simpleNamer nameForClass

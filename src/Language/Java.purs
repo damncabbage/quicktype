@@ -6,16 +6,13 @@ import Doc
 import IRGraph
 import Prelude
 
-import Data.Array as A
 import Data.Char.Unicode (GeneralCategory(..), generalCategory, isSpace)
-import Data.Foldable (find, for_)
+import Data.Foldable (for_)
 import Data.Map (Map)
 import Data.Map as M
-import Data.Maybe (Maybe(..), isJust, isNothing)
-import Data.Set (Set)
-import Data.Set as S
+import Data.StrMap as SM
+import Data.Maybe (Maybe(..))
 import Data.String.Util (camelCase, capitalize, isLetterOrLetterNumber, legalizeCharacters, startWithLetter, stringEscape)
-import Data.Tuple (Tuple(..))
 
 forbiddenNames :: Array String
 forbiddenNames =
@@ -42,7 +39,7 @@ renderer =
     , aceMode: "java"
     , extension: "java"
     , doc: javaDoc
-    , options: M.empty
+    , options: SM.empty
     , transforms:
         { nameForClass: simpleNamer nameForClass
         , nextName: \s -> "Other" <> s

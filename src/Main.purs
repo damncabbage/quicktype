@@ -35,7 +35,7 @@ renderers = Renderers.all
 -- FIXME: error handling!
 makeOptionValues :: Options -> StrMap String -> OptionValues
 makeOptionValues options optionStrings =
-    M.mapWithKey optionValueForOption options
+    SM.mapWithKey optionValueForOption options
     where
         optionValueForOption :: String -> Option -> OptionValue
         optionValueForOption name { default } =
